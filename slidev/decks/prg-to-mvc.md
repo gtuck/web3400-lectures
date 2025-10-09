@@ -106,7 +106,7 @@ Even with PRG:
 
 ## Code Example: Your Project 01
 
-```php {all|5-9|11-14|16-20|all}
+```php
 <?php
 // blog_create.php - Everything in one file (200+ lines)
 
@@ -144,7 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ## Transitioning the Flow – PRG → MVC
 
 <br><br><br>
-<v-clicks>
+
 
 ```mermaid
 %%{init: {'theme':'dark', 'themeVariables': { 'primaryColor':'#1E3A8A','primaryTextColor':'#F9FAFB','primaryBorderColor':'#4B5563','lineColor':'#9CA3AF','secondaryColor':'#065F46','tertiaryColor':'#9A3412'}}}%%
@@ -162,8 +162,6 @@ graph LR
     style View fill:#9A3412,stroke:#4B5563,color:#F9FAFB
     style Response fill:#374151,stroke:#4B5563,color:#F9FAFB
 ```
-
-</v-clicks>
 
 ---
 
@@ -188,7 +186,7 @@ graph LR
 <div>
 
 ### Before (PRG - blog_create.php)
-```php {all|3-5|8-11|14|all}
+```php
 // All in one file
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = trim($_POST['title'] ?? '');
@@ -216,7 +214,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div>
 
 ### After (MVC)
-```php {all|3-6|9|12|all}
+```php
 // Controller
 public function create() {
     if ($_POST) {
@@ -333,11 +331,9 @@ flowchart LR
 
 ## Deep Dive: What Models Really Do
 
-<v-clicks>
-
 ### More than just SQL queries:
 
-```php {all|4-7|10|13|16-17|20|all}
+```php
 class Post {
     public function create($data) {
         // 1. Validation (business rules)
@@ -366,13 +362,9 @@ class Post {
 
 💡 *Models encapsulate ALL data-related logic*
 
-</v-clicks>
-
 ---
 
 ## Why MVC Makes Debugging Easier
-
-<v-clicks>
 
 ### PRG Approach
 ```php
@@ -393,13 +385,9 @@ class Post {
 ✅ **Faster fixes**: Know exactly where to look  
 ✅ **Reusable code**: Models work across multiple controllers
 
-</v-clicks>
-
 ---
 
 ## Common Questions About MVC
-
-<v-clicks>
 
 **"Where does validation go?"**  
 → **Input validation** (format, required) in Controller  
@@ -421,8 +409,6 @@ class Post {
 → Understanding > Using. Build it first, then frameworks make sense  
 → You'll use YOUR framework all semester, improving it each project
 
-</v-clicks>
-
 ---
 
 ## Quick Exercise (2 minutes)
@@ -439,8 +425,6 @@ if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 }
 ```
 
-<v-clicks>
-
 **A)** Model  
 **B)** View  
 **C)** Controller  
@@ -451,15 +435,11 @@ if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 
 *Rule of thumb: If it checks the database, it's Model logic*
 
-</v-clicks>
-
 ---
 
 ## MVC in the Wild
 
 You're building what powers the industry:
-
-<v-clicks>
 
 - **Laravel** (PHP) - Uses MVC with routing, controllers, models, views
 - **Ruby on Rails** - Twitter, GitHub, Shopify all started here
@@ -473,13 +453,9 @@ You're building what powers the industry:
 
 *By building it yourself, you'll understand ANY framework faster*
 
-</v-clicks>
-
 ---
 
 ## Why This Matters
-
-<v-clicks>
 
 ✅ **Cleaner code** - Each file has one clear purpose  
 ✅ **Reusable parts** - Models work across multiple controllers  
@@ -493,13 +469,9 @@ You're building what powers the industry:
 
 **Most important:** This is YOUR codebase for the rest of the semester.
 
-</v-clicks>
-
 ---
 
 ## You'll Know You Understand MVC When...
-
-<v-clicks>
 
 ✅ You can explain each component's job in one sentence  
 ✅ You know where to put a new feature in YOUR framework  
@@ -510,8 +482,6 @@ You're building what powers the industry:
 ✅ You recognize MVC patterns when you see other frameworks  
 ✅ You can debug by knowing which layer to check first
 
-</v-clicks>
-
 🎯 **Today's Goal:** Recognize MVC in your existing code  
 🎯 **Semester Goal:** Build, use, and master YOUR framework
 
@@ -520,8 +490,6 @@ You're building what powers the industry:
 ## Thinking Ahead – Project 02
 
 You'll **build YOUR OWN MVC framework** from scratch:
-
-<v-clicks>
 
 - ✅ A lightweight **router** (maps URLs to controllers)
 - ✅ A base **Controller** class (shared methods)
@@ -538,13 +506,9 @@ You'll **build YOUR OWN MVC framework** from scratch:
 
 **This is YOUR framework. You built it. You own it.**
 
-</v-clicks>
-
 ---
 
 ## Your Framework's Journey This Semester
-
-<v-clicks>
 
 **Project 02** → Build the foundation (Router, Controller, Model, View)  
 **Project 03** → Add authentication (Users, sessions, login/logout)  
@@ -557,15 +521,11 @@ Each improvement makes YOUR next project easier.
 
 **Comparison point:** Laravel took years to evolve. You'll do it in one semester.
 
-</v-clicks>
-
 ---
 
 ## How to Prepare (Detailed)
 
 Before the next project:
-
-<v-clicks>
 
 **Step 1:** Review your Project 01 code thoroughly  
 **Step 2:** List everywhere you wrote SQL queries  
@@ -582,13 +542,9 @@ Before the next project:
 - `Controller::method()` → How do we organize actions?
 - `Model::find()` → How do we query cleanly?
 
-</v-clicks>
-
 ---
 
 ## Resources for Learning More
-
-<v-clicks>
 
 **Before Next Class:**
 - Review Project 01 code with MVC lens
@@ -610,8 +566,6 @@ Before the next project:
 - Build every new project using YOUR framework
 - Identify improvements and implement them
 - Document YOUR design decisions
-
-</v-clicks>
 
 ---
 

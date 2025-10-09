@@ -12,8 +12,8 @@ Welcome to LAMP stack!
 
 ## Table of Contents
 
-1. [Lecture: PRG to MVC](/slidev/decks/prg-to-mvc.md)
-2. [Lecture: MVC Pattern](/slidev/decks/mvc-pattern.md)
+1. [Lecture: PRG to MVC](/3)
+2. [Lecture: MVC Pattern](/27)
 
 ---
 src: /decks/prg-to-mvc.md

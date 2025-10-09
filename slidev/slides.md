@@ -17,6 +17,4 @@ Welcome to LAMP stack!
 
 ---
 src: decks/prg-to-mvc.md
----
 src: decks/mvc-pattern.md
----

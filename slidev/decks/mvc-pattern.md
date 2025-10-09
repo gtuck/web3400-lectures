@@ -337,7 +337,7 @@ Coordinate Model and View
 - Get data from Model
 - Require the View
 
-```php {all|3|5-7|9|11|13}
+```php
 <?php
 
 class Controller

@@ -124,7 +124,7 @@ Model-View-Controller Design Pattern
 
 </div>
 
-<div class="mt-8 text-center">
+<div class="mt-8 text-center" v-click>
 
 ```mermaid
 graph LR

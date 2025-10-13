@@ -14,6 +14,7 @@ Welcome to LAMP stack!
 
 1. [Lecture: PRG to MVC](/3)
 2. [Lecture: MVC Pattern](/27)
+3. [Lecture: MVC Pattern](/42)
 
 ---
 src: /decks/prg-to-mvc.md
@@ -21,4 +22,8 @@ src: /decks/prg-to-mvc.md
 
 ---
 src: ./decks/mvc-pattern.md
+---
+
+---
+src: ./decks/mvc-project.md
 ---

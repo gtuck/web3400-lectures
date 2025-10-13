@@ -74,6 +74,10 @@ Key files/dirs:
 - `composer.lock` – exact versions installed
 - `vendor/` – installed packages + `vendor/autoload.php`
 
+---
+
+# Composer (What & Why) Cont.
+
 Common commands:
 - `composer init` / `composer require vendor/package`
 - `composer install` / `composer update`

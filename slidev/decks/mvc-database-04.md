@@ -1,6 +1,6 @@
 ---
 theme: default
-title: Dotenv, DB Helper, and Contact Form
+title: Dotenv, DB Helper, BaseModel + Generator, and Contact Form
 info: |
   Use phpdotenv for configuration, centralize PDO, and add a secure contact flow
 layout: cover
@@ -11,13 +11,13 @@ drawings:
 transition: slide-left
 mdc: true
 download: true
-exportFilename: dotenv-db-helper-contact
+exportFilename: dotenv-db-helper-basemodel-generator-contact
 class: text-center
 ---
 
-# Dotenv, DB Helper, and Contact Form
+# Dotenv, DB Helper, BaseModel + Generator, and Contact Form
 
-Secure config • Reusable PDO • Prepared statements
+Secure config • Reusable PDO • BaseModel • Prepared statements
 
 ---
 layout: two-cols
@@ -40,7 +40,8 @@ Add:
 - `.env` and `.env.example`
 - `Database` helper (PDO)
 - Contact form (GET/POST)
-- Prepared statements (INSERT)
+- BaseModel + Generator (required)
+- Prepared statements (INSERT via model)
 
 ---
 
@@ -159,6 +160,8 @@ Key skills:
 # Controller (Sketch)
 
 ```php
+use App\Models\Contact;
+
 class ContactController extends Controller {
   public function show() { $this->render('contact', ['errors'=>[], 'old'=>[]]); }
   public function submit() {
@@ -170,9 +173,7 @@ class ContactController extends Controller {
     if ($email==='' || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[]='Valid email required';
     if ($message==='') $errors[]='Message required';
     if ($errors) return $this->render('contact', ['errors'=>$errors,'old'=>compact('name','email','message')]);
-    $pdo = Database::pdo();
-    $pdo->prepare('INSERT INTO contact_us (name,email,message) VALUES (:name,:email,:message)')
-        ->execute([':name'=>$name, ':email'=>$email, ':message'=>$message]);
+    Contact::create(['name'=>$name, 'email'=>$email, 'message'=>$message]);
     $this->render('contact', ['errors'=>[], 'old'=>[], 'status'=>'Thanks!']);
   }
 }
@@ -220,9 +221,10 @@ Avoid:
 1) Install `vlucas/phpdotenv`
 2) Add `.env` + bootstrap
 3) Add `Database::pdo()`
-4) Build `ContactController` + routes
-5) Create `contact.php` view
-6) Test GET + POST; verify DB insert
+4) Add BaseModel + generate `Contact` model
+5) Build `ContactController` using `Contact::create` + routes
+6) Create `contact.php` view
+7) Test GET + POST; verify DB insert
 
 ---
 
@@ -232,10 +234,11 @@ Avoid:
 - Wrong DSN or charset
 - Not using prepared statements
 - Missing HTML escaping in view
+- Not whitelisting columns in `$fillable`
 
 ---
 
-# DIY BaseModel (CRUD)
+# BaseModel (CRUD)
 
 Why:
 - Keep controllers thin and reuse CRUD logic

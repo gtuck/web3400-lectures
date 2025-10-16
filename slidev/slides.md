@@ -15,7 +15,7 @@ Welcome to LAMP stack!
 1. [Lecture: PRG to MVC - P01](/3)
 2. [Lecture: MVC Pattern - P02](/27)
 3. [Lecture: MVC Project - P03](/42)
-4. [Lecture: MVC Data - P04](/65)
+4. [Lecture: MVC Database - P04](/65)
 4. [Lecture: MVC Templates - P05](/81)
 
 

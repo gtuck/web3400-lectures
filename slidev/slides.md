@@ -16,19 +16,25 @@ Welcome to LAMP stack!
 2. [Lecture: MVC Pattern - P02](/27)
 3. [Lecture: MVC Project - P03](/42)
 4. [Lecture: MVC Data - P04](/65)
+4. [Lecture: MVC Templates - P05](/81)
+
 
 ---
-src: /decks/prg-to-mvc.md
----
-
----
-src: ./decks/mvc-pattern.md
----
-
----
-src: ./decks/mvc-project.md
+src: /decks/prg-to-mvc-01.md
 ---
 
 ---
-src: ./decks/mvc-templates.md
+src: ./decks/mvc-pattern-02.md
+---
+
+---
+src: ./decks/mvc-project-03.md
+---
+
+---
+src: ./decks/mvc-database-04.md
+---
+
+---
+src: ./decks/mvc-templates-05.md
 ---

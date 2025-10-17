@@ -16,7 +16,7 @@ Welcome to LAMP stack!
 2. [Lecture: MVC Pattern - P02](/27)
 3. [Lecture: MVC Structure - P03](/42)
 4. [Lecture: MVC Database - P04](/65)
-4. [Lecture: MVC Templates - P05](/82)
+5. [Lecture: MVC Templates - P05](/82)
 
 
 ---
